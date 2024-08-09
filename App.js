@@ -12,45 +12,37 @@ export default function App() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post("http://192.168.1.192:3000/usuarios", {
+      const response = await axios.post(`http://${IP_URL}:3000/usuarios`, {
         username: username,
         email: email,
         passcode: passcode
       });
-      if (response.status === 200) {
-        console.log("Aeee");
-        alert("Cadastro bem-sucedido")
-      return "Cadastro Bem-sucedido"
-      }else {
-        return "Erro ao cadastrar"
+      if (response.status === 201) {
+        alert("Cadastro bem-sucedido");
+      } else {
+        alert("Erro ao cadastrar");
       }
-      }catch (error) {
-      console.error("Erro ao cadastar", error.message);
-      return "Erro ao cadastrar";
+    } catch (error) {
+      console.error("Erro ao cadastrar:", error.message);
+      alert("Erro ao cadastrar");
     }
   };
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://192.168.1.192:3000/login", {
+      const response = await axios.post(`http://${IP_URL}:3000/login`, {
         email: email,
         passcode: passcode
       });
-      // Verifique se a resposta contém um token de autorização
       if (response.status === 200) {
-        console.log("Token de autorização:", response.headers.authorization);
-
-        // Converta o objeto response em uma string JSON
-        const responseJSON = JSON.stringify(response);
-        console.log("perfeito");
-
-        return "Login bem-sucedido";
+        setToken(response.data.token);
+        alert("Login bem-sucedido");
       } else {
-        return "Email ou senha incorretos";
+        alert("Email ou senha incorretos");
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error.message);
-      return "Erro ao fazer login";
+      alert("Erro ao fazer login");
     }
   };
 
