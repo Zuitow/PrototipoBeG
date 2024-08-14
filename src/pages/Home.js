@@ -40,7 +40,7 @@ export default function Home() {
                 const token = response.data.token;
                 alert("Login bem-sucedido");
                 console.log("Login bem-sucedido");
-                navigation.navigate("Drinks", { token });
+                navigation.navigate("DrinksList", { token });
             } else {
                 alert("Email ou senha incorretos");
             }
@@ -71,6 +71,10 @@ export default function Home() {
             </Pressable>
             <Pressable style={[styles.apertabel, { backgroundColor: 'blue' }]} onPress={() => navigation.navigate("Drinks")}>
                 <Text style={{ fontSize: 25 }}>Ir para Drinks</Text>
+            </Pressable>
+
+            <Pressable style={[styles.apertabel, { backgroundColor: 'yellow' }]} onPress={() => navigation.navigate("DrinksList")}>
+                <Text style={{ fontSize: 25 }}>Ir para DrinksList</Text>
             </Pressable>
         </View>
     );
