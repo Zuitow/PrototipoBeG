@@ -6,6 +6,7 @@ import Home from "./src/pages/Home";
 import Drinks from "./src/pages/Drinks";
 import DrinksList from "./src/pages/DrinkList";
 import DrinkDetails from "./src/pages/DrinkDetails";
+import Profile from "./src/pages/Perfil";
 
 // Importando "Comunicante" com o servidor BackEnd
 
@@ -23,6 +24,8 @@ export default function App() {
         <Stack.Screen name="DrinksList" component={DrinksList} />
         {/* Define uma tela com o nome "Sobre" e associa o componente Sobre a ela. */}
         <Stack.Screen name="DrinkDetails" component={DrinkDetails} />
+        {/* Define uma tela com o nome "Sobre" e associa o componente Sobre a ela. */}
+        <Stack.Screen name="Profile" component={Profile} />
         {/* Define uma tela com o nome "Sobre" e associa o componente Sobre a ela. */}
       </Stack.Navigator>
     </NavigationContainer>

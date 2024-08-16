@@ -76,6 +76,10 @@ export default function Home() {
             <Pressable style={[styles.apertabel, { backgroundColor: 'yellow' }]} onPress={() => navigation.navigate("DrinksList")}>
                 <Text style={{ fontSize: 25 }}>Ir para DrinksList</Text>
             </Pressable>
+
+            <Pressable style={[styles.apertabel, { backgroundColor: 'yellow' }]} onPress={() => navigation.navigate("Profile")}>
+                <Text style={{ fontSize: 25 }}>Ir para Perfil</Text>
+            </Pressable>
         </View>
     );
 }
