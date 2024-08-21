@@ -33,7 +33,7 @@ export default function Home() {
     const handleLogin = async () => {
         try {
             const response = await axios.post(`http://${IP_URL}:3000/login`, {
-                email: email,
+                username: username,
                 passcode: passcode,
             });
             if (response.status === 200) {
